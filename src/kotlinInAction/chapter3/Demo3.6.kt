@@ -65,7 +65,7 @@ fun User.validateBeforSave(){
     fun validate(value : String, fieldName : String){
         if (value.isEmpty()){
             throw IllegalArgumentException(
-                    "Can't save user $id : empty $fieldName" //可以直接访问 User 的属性
+                    "Can't save user $id : empty $fieldName" //可以直接访问 User 类的属性
             )
         }
     }
@@ -76,4 +76,6 @@ fun User.validateBeforSave(){
 
 fun saveUser_4(user : User){
     user.validateBeforSave()
+
+    //TODO 保存 user 到数据库
 }
